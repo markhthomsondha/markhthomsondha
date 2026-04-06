@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Mark H. Thomson is a healthcare administrator and DHA doctoral candidate specializing in healthcare leadership, operations, and emotionally intelligent management.">
+  <title>Mark H. Thomson | Healthcare Administrator</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mark H. Thomson",
+    "jobTitle": "Healthcare Administrator",
+    "description": "Healthcare administrator and doctoral candidate in Healthcare Administration, specializing in emotionally intelligent leadership and healthcare operations.",
+    "url": "https://your-username.github.io",
+    "email": "markhthomson4@gmail.com",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of North Carolina at Pembroke"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #0d1f2d;
+      --teal:   #1a7a72;
+      --teal-lt:#25a99e;
+      --gold:   #c8a84b;
+      --cream:  #f5f0e8;
+      --white:  #ffffff;
+      --text:   #1e2d3a;
+      --muted:  #5a6a76;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(13,31,45,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200,168,75,0.25);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    #hero { min-height: 100vh; background: var(--navy); display: grid; grid-template-columns: 1fr 1fr; align-items: center; position: relative; overflow: hidden; }
+    .hero-bg-accent { position: absolute; top: -120px; right: -120px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(26,122,114,0.35) 0%, transparent 70%); pointer-events: none; }
+    .hero-bg-line { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .hero-content { padding: 8rem 4rem 6rem 6rem; animation: fadeUp 0.9s ease both; }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 1.4rem; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5rem); font-weight: 700; line-height: 1.05; color: var(--white); margin-bottom: 1rem; }
+    .hero-name span { color: var(--gold); }
+    .hero-title { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 440px; margin-bottom: 2.5rem; }
+    .hero-cta { display: inline-block; padding: 0.85rem 2.2rem; background: transparent; border: 1.5px solid var(--gold); color: var(--gold); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.25s, color 0.25s; }
+    .hero-cta:hover { background: var(--gold); color: var(--navy); }
+    .hero-right { padding: 8rem 6rem 6rem 2rem; display: flex; flex-direction: column; gap: 2rem; animation: fadeUp 0.9s 0.2s ease both; }
+    .stat-card { border-left: 3px solid var(--teal); padding-left: 1.4rem; }
+    .stat-card .num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-card .label { font-size: 0.8rem; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; margin-top: 0.25rem; }
+
+    /* SECTIONS */
+    section { padding: 6rem 6rem; }
+    .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.15; color: var(--navy); margin-bottom: 2rem; }
+    .divider { width: 60px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--teal)); margin-bottom: 2.5rem; }
+
+    /* ABOUT */
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center; }
+    .about-text p { font-size: 1.05rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
+    .tag { padding: 0.4rem 1rem; border: 1px solid rgba(26,122,114,0.35); color: var(--teal); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; border-radius: 2px; }
+    .about-highlight { background: var(--navy); padding: 2.5rem; border-radius: 4px; position: relative; overflow: hidden; }
+    .about-highlight::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 10rem; line-height: 1; color: rgba(200,168,75,0.12); position: absolute; top: -1.5rem; left: 1rem; pointer-events: none; }
+    .about-highlight blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--white); line-height: 1.6; font-style: italic; position: relative; z-index: 1; }
+    .about-highlight cite { display: block; margin-top: 1.2rem; font-size: 0.78rem; font-style: normal; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* EXPERTISE */
+    #expertise { background: var(--cream); }
+    .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    a.expertise-card {
+      display: block; background: var(--white); padding: 2rem 1.8rem;
+      border-top: 3px solid transparent; text-decoration: none; color: inherit;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    a.expertise-card:hover { border-color: var(--gold); transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13,31,45,0.12); }
+    a.expertise-card .card-arrow { position: absolute; bottom: 1.4rem; right: 1.4rem; font-size: 1rem; color: var(--teal); opacity: 0; transform: translateX(-6px); transition: opacity 0.25s, transform 0.25s; }
+    a.expertise-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+    .card-icon { width: 44px; height: 44px; background: rgba(26,122,114,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; font-size: 1.2rem; }
+    a.expertise-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem; }
+    a.expertise-card p { font-size: 0.9rem; line-height: 1.75; color: var(--muted); }
+    .card-learn { display: inline-block; margin-top: 1rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); border-bottom: 1px solid rgba(26,122,114,0.3); transition: color 0.2s, border-color 0.2s; }
+    a.expertise-card:hover .card-learn { color: var(--gold); border-color: var(--gold); }
+
+    /* EDUCATION */
+    #education { background: var(--navy); }
+    #education .section-heading { color: var(--white); }
+    #education .section-label { color: var(--teal-lt); }
+    .edu-timeline { display: flex; flex-direction: column; gap: 0; max-width: 780px; }
+    .edu-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-year { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); font-weight: 600; padding-top: 0.25rem; }
+    .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+    .edu-school { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
+    .edu-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+    /* CONTACT */
+    #contact { background: var(--cream); text-align: center; }
+    #contact .section-heading { margin-bottom: 0.75rem; }
+    .contact-sub { font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .contact-links { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+    .contact-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.8rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
+    .contact-btn.primary { background: var(--navy); color: var(--white); }
+    .contact-btn.primary:hover { background: var(--teal); }
+
+    /* FOOTER */
+    footer { background: var(--navy); text-align: center; padding: 1.8rem; font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+    /* SCROLL ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal, .reveal-left, .reveal-right, .reveal-scale {
+      opacity: 0;
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal          { transform: translateY(32px); }
+    .reveal-left     { transform: translateX(-40px); }
+    .reveal-right    { transform: translateX(40px); }
+    .reveal-scale    { transform: scale(0.94); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible { opacity: 1; transform: none; }
+
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.15s; }
+    .stagger-3 { transition-delay: 0.25s; }
+    .stagger-4 { transition-delay: 0.35s; }
+    .stagger-5 { transition-delay: 0.45s; }
+    .stagger-6 { transition-delay: 0.55s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+      #hero { grid-template-columns: 1fr; }
+      .hero-content { padding: 8rem 2rem 2rem; }
+      .hero-right { padding: 2rem; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+      section { padding: 4rem 2rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .expertise-grid { grid-template-columns: 1fr 1fr; }
+      .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+    @media (max-width: 600px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">MHT</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-accent"></div>
+    <div class="hero-bg-line"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Healthcare Administration &amp; Leadership</p>
+      <h1 class="hero-name">Mark H.<br><span>Thomson</span></h1>
+      <p class="hero-title">Healthcare administrator, doctoral candidate, and advocate for operationally excellent, people-centered care delivery.</p>
+      <a href="#about" class="hero-cta">Learn More</a>
+    </div>
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="num">DHA</div>
+        <div class="label">Doctoral Candidate — Healthcare Administration</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">MBA</div>
+        <div class="label">Master of Business Administration — UNCP</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">EI</div>
+        <div class="label">Leadership focused on emotional intelligence &amp; culture</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-text reveal-left">
+        <p class="section-label">About Me</p>
+        <h2 class="section-heading">Bridging Administration &amp; Human-Centered Care</h2>
+        <div class="divider"></div>
+        <p>I am a <strong>healthcare administrator</strong> with a passion for building organizations where clinical excellence and compassionate culture go hand in hand. My work is grounded in operational strategy, team development, and evidence-based leadership.</p>
+        <p>Currently pursuing my <strong>Doctorate in Healthcare Administration (DHA)</strong>, I bring academic rigor to the practical challenges healthcare leaders face — from workforce engagement and patient outcomes to regulatory compliance and system design.</p>
+        <p>I believe that emotionally intelligent leadership is the cornerstone of high-performing healthcare organizations, and I am committed to developing the next generation of leaders who lead with both head and heart.</p>
+        <div class="about-tags">
+          <span class="tag">Strategic Planning</span>
+          <span class="tag">Operational Leadership</span>
+          <span class="tag">Healthcare Policy</span>
+          <span class="tag">Team Development</span>
+          <span class="tag">Quality Improvement</span>
+          <span class="tag">Emotional Intelligence</span>
+        </div>
+      </div>
+      <div class="about-highlight reveal-right">
+        <blockquote>
+          "The most powerful leaders in healthcare are those who combine systemic thinking with genuine human connection."
+        </blockquote>
+        <cite>— Mark H. Thomson</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise">
+    <div class="reveal">
+      <p class="section-label">Core Competencies</p>
+      <h2 class="section-heading">Areas of Expertise</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="expertise-grid">
+
+      <a href="expertise.html#healthcare-operations" class="expertise-card reveal-scale stagger-1">
+        <div class="card-icon">🏥</div>
+        <h3>Healthcare Operations</h3>
+        <p>Streamlining processes, managing resources, and ensuring day-to-day excellence across clinical and administrative departments.</p>
+        <span class="card-learn">Learn More</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="expertise.html#policy-compliance" class="expertise-card reveal-scale stagger-2">
+        <div class="card-icon">📋</div>
+        <h3>Policy &amp; Compliance</h3>
+        <p>Navigating complex regulatory environments and translating healthcare policy into actionable organizational practice.</p>
+        <span class="card-learn">Learn More</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="expertise.html#emotional-intelligence" class="expertise-card reveal-scale stagger-3">
+        <div class="card-icon">🧠</div>
+        <h3>Emotional Intelligence</h3>
+        <p>Applying EI frameworks — self-awareness, empathy, and social awareness — to build high-trust, high-performance teams.</p>
+        <span class="card-learn">Learn More</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="expertise.html#quality-improvement" class="expertise-card reveal-scale stagger-4">
+        <div class="card-icon">📊</div>
+        <h3>Quality Improvement</h3>
+        <p>Using data-driven methodologies to drive measurable improvements in patient outcomes, safety, and satisfaction.</p>
+        <span class="card-learn">Learn More</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="expertise.html#staff-development" class="expertise-card reveal-scale stagger-5">
+        <div class="card-icon">🤝</div>
+        <h3>Staff Development</h3>
+        <p>Mentoring clinical and administrative teams, fostering professional growth and reducing burnout through purposeful leadership.</p>
+        <span class="card-learn">Learn More</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <a href="expertise.html#applied-research" class="expertise-card reveal-scale stagger-6">
+        <div class="card-icon">🔬</div>
+        <h3>Applied Research</h3>
+        <p>Translating doctoral-level research into evidence-based strategies that strengthen healthcare system performance.</p>
+        <span class="card-learn">Learn More</span>
+        <span class="card-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="reveal">
+      <p class="section-label">Academic Background</p>
+      <h2 class="section-heading">Education &amp; Credentials</h2>
+      <div class="divider" style="background: linear-gradient(90deg, var(--gold), var(--teal-lt));"></div>
+    </div>
+    <div class="edu-timeline">
+
+      <div class="edu-item reveal stagger-1">
+        <div class="edu-year">In Progress</div>
+        <div>
+          <div class="edu-degree">Doctorate in Healthcare Administration (DHA)</div>
+          <div class="edu-school">Doctoral Program — Healthcare Administration</div>
+          <div class="edu-desc">Focused on healthcare leadership, organizational behavior, health systems strategy, and evidence-based administrative practice. Dissertation research in progress.</div>
+        </div>
+      </div>
+
+      <div class="edu-item reveal stagger-2">
+        <div class="edu-year">Completed</div>
+        <div>
+          <div class="edu-degree">Master of Business Administration (MBA)</div>
+          <div class="edu-school">University of North Carolina at Pembroke — Concentration in Healthcare Administration</div>
+          <div class="edu-desc">Advanced study in business strategy, healthcare management, financial leadership, and organizational systems — providing a strong foundation for executive-level administration in healthcare settings.</div>
+        </div>
+      </div>
+
+      <div class="edu-item reveal stagger-3">
+        <div class="edu-year">Ongoing</div>
+        <div>
+          <div class="edu-degree">Professional Development</div>
+          <div class="edu-school">Continuing Education &amp; Leadership Training</div>
+          <div class="edu-desc">Committed to lifelong learning through professional associations, leadership seminars, and applied healthcare management training.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="reveal">
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-heading">Let's Connect</h2>
+      <div class="divider" style="margin: 0 auto 2rem;"></div>
+      <p class="contact-sub">Whether you're looking to collaborate, discuss healthcare leadership, or simply connect with a fellow administrator — I'd love to hear from you.</p>
+      <div class="contact-links">
+        <a href="mailto:markhthomson4@gmail.com" class="contact-btn primary">✉ Send an Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Mark H. Thomson · Healthcare Administrator · Doctoral Candidate
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
