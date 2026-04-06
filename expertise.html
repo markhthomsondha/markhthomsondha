@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Detailed overview of Mark H. Thomson's areas of expertise in healthcare administration, leadership, and organizational management.">
+  <title>Areas of Expertise | Mark H. Thomson</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #0d1f2d;
+      --teal:   #1a7a72;
+      --teal-lt:#25a99e;
+      --gold:   #c8a84b;
+      --cream:  #f5f0e8;
+      --white:  #ffffff;
+      --text:   #1e2d3a;
+      --muted:  #5a6a76;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(13,31,45,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200,168,75,0.25);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; text-decoration: none; }
+    .nav-back { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.25s; display: flex; align-items: center; gap: 0.5rem; }
+    .nav-back:hover { color: var(--gold); }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--navy);
+      padding: 10rem 6rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .page-hero-bg {
+      position: absolute; top: -100px; right: -100px;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,122,114,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero p.eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 1rem; }
+    .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; line-height: 1.1; }
+    .page-hero h1 span { color: var(--gold); }
+    .page-hero p.subtitle { font-size: 1rem; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.75; }
+
+    /* QUICK NAV */
+    .quick-nav {
+      background: var(--white);
+      padding: 1.5rem 6rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      border-bottom: 1px solid rgba(13,31,45,0.08);
+      position: sticky; top: 64px; z-index: 50;
+    }
+    .quick-nav a {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .quick-nav a:hover { color: var(--teal); }
+
+    /* EXPERTISE SECTIONS */
+    .expertise-section {
+      padding: 5rem 6rem;
+      border-bottom: 1px solid rgba(13,31,45,0.07);
+    }
+    .expertise-section:nth-child(even) { background: var(--white); }
+    .expertise-section:nth-child(odd)  { background: var(--cream); }
+
+    .exp-header { display: flex; align-items: flex-start; gap: 1.8rem; margin-bottom: 2.5rem; }
+    .exp-icon {
+      width: 64px; height: 64px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(26,122,114,0.15), rgba(200,168,75,0.1));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+    }
+    .exp-title-block .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+    .exp-title-block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 700; color: var(--navy); line-height: 1.1; }
+
+    .exp-divider { width: 50px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--teal)); margin-bottom: 2rem; }
+
+    .exp-body { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
+    .exp-intro { font-size: 1.05rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.5rem; }
+    .exp-intro strong { color: var(--text); font-weight: 500; }
+
+    .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+    .exp-points li {
+      display: flex; gap: 0.9rem; align-items: flex-start;
+      font-size: 0.95rem; line-height: 1.7; color: var(--muted);
+    }
+    .exp-points li::before {
+      content: ''; flex-shrink: 0;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); margin-top: 0.55rem;
+    }
+
+    .exp-callout {
+      background: var(--navy);
+      padding: 2rem 2rem 2rem 2rem;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+    }
+    .exp-callout .callout-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-lt); margin-bottom: 0.75rem; }
+    .exp-callout p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--white); line-height: 1.65; font-style: italic; }
+
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .exp-tag { padding: 0.35rem 0.9rem; background: rgba(26,122,114,0.1); color: var(--teal); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.04em; border-radius: 2px; }
+
+    /* BACK CTA */
+    .back-cta {
+      background: var(--navy); text-align: center; padding: 4rem 6rem;
+    }
+    .back-cta p { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+    .back-cta a {
+      display: inline-block; padding: 0.85rem 2.2rem;
+      border: 1.5px solid var(--gold); color: var(--gold);
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+    .back-cta a:hover { background: var(--gold); color: var(--navy); }
+
+    /* FOOTER */
+    footer { background: var(--navy); text-align: center; padding: 1.8rem; font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+
+    /* SCROLL ANIMATIONS */
+    .reveal, .reveal-left, .reveal-right {
+      opacity: 0;
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal       { transform: translateY(28px); }
+    .reveal-left  { transform: translateX(-32px); }
+    .reveal-right { transform: translateX(32px); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .page-hero { padding: 8rem 2rem 4rem; }
+      .quick-nav { padding: 1.2rem 2rem; gap: 1.2rem; }
+      .expertise-section { padding: 4rem 2rem; }
+      .exp-body { grid-template-columns: 1fr; gap: 2rem; }
+      .back-cta { padding: 3rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">MHT</a>
+    <a href="index.html#expertise" class="nav-back">← Back to Portfolio</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <p class="eyebrow">Core Competencies</p>
+    <h1>Areas of <span>Expertise</span></h1>
+    <p class="subtitle">An in-depth look at the knowledge domains that define Mark H. Thomson's approach to healthcare administration and leadership.</p>
+  </div>
+
+  <!-- QUICK NAV -->
+  <div class="quick-nav">
+    <a href="#healthcare-operations">Operations</a>
+    <a href="#policy-compliance">Policy &amp; Compliance</a>
+    <a href="#emotional-intelligence">Emotional Intelligence</a>
+    <a href="#quality-improvement">Quality Improvement</a>
+    <a href="#staff-development">Staff Development</a>
+    <a href="#applied-research">Applied Research</a>
+  </div>
+
+  <!-- 1. HEALTHCARE OPERATIONS -->
+  <section class="expertise-section" id="healthcare-operations">
+    <div class="exp-header reveal">
+      <div class="exp-icon">🏥</div>
+      <div class="exp-title-block">
+        <p class="section-label">Competency 01</p>
+        <h2>Healthcare Operations</h2>
+      </div>
+    </div>
+    <div class="exp-divider reveal"></div>
+    <div class="exp-body">
+      <div class="reveal-left">
+        <p class="exp-intro">Effective healthcare operations are the backbone of any high-functioning organization. <strong>Operational excellence</strong> means aligning people, processes, and resources to deliver consistent, safe, and efficient care — every day, at every level of the organization.</p>
+        <p class="exp-intro">My approach focuses on identifying inefficiencies, building scalable workflows, and empowering frontline staff to own their role in the larger system.</p>
+        <ul class="exp-points">
+          <li>Designing and optimizing clinical and administrative workflows to reduce waste and improve throughput</li>
+          <li>Managing departmental budgets and resource allocation to maximize impact with finite resources</li>
+          <li>Coordinating cross-functional teams across nursing, clinical, and administrative departments</li>
+          <li>Implementing performance metrics and dashboards to monitor real-time operational health</li>
+          <li>Leading capacity planning efforts to ensure staffing levels align with patient demand</li>
+          <li>Driving continuous process improvement through Lean, Six Sigma, and PDCA frameworks</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Workflow Design</span>
+          <span class="exp-tag">Resource Management</span>
+          <span class="exp-tag">Lean Methodology</span>
+          <span class="exp-tag">KPI Dashboards</span>
+          <span class="exp-tag">Capacity Planning</span>
+        </div>
+      </div>
+      <div class="exp-callout reveal-right">
+        <p class="callout-label">Key Insight</p>
+        <p>"Operational excellence in healthcare isn't about cutting corners — it's about removing friction so that clinicians can focus entirely on what matters most: the patient."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. POLICY & COMPLIANCE -->
+  <section class="expertise-section" id="policy-compliance">
+    <div class="exp-header reveal">
+      <div class="exp-icon">📋</div>
+      <div class="exp-title-block">
+        <p class="section-label">Competency 02</p>
+        <h2>Policy &amp; Compliance</h2>
+      </div>
+    </div>
+    <div class="exp-divider reveal"></div>
+    <div class="exp-body">
+      <div class="reveal-left">
+        <p class="exp-intro">Healthcare is one of the most heavily regulated industries in the world. <strong>Navigating policy and compliance</strong> requires not only a thorough understanding of the regulatory landscape, but the ability to translate complex requirements into practical, day-to-day organizational behavior.</p>
+        <p class="exp-intro">I approach compliance not as a burden, but as a framework for building trustworthy, safe organizations that protect patients and staff alike.</p>
+        <ul class="exp-points">
+          <li>Interpreting and implementing federal and state healthcare regulations, including CMS, HIPAA, and Joint Commission standards</li>
+          <li>Developing organizational policies that align with regulatory requirements while remaining operationally practical</li>
+          <li>Leading compliance audits and risk assessments to proactively identify and address vulnerabilities</li>
+          <li>Training staff on policy adherence, documentation standards, and reporting obligations</li>
+          <li>Monitoring legislative changes and adapting organizational practices in response</li>
+          <li>Building a culture of compliance where staff understand the "why" behind regulatory expectations</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">HIPAA</span>
+          <span class="exp-tag">CMS Standards</span>
+          <span class="exp-tag">Joint Commission</span>
+          <span class="exp-tag">Risk Assessment</span>
+          <span class="exp-tag">Policy Development</span>
+        </div>
+      </div>
+      <div class="exp-callout reveal-right">
+        <p class="callout-label">Key Insight</p>
+        <p>"The best compliance programs don't just check boxes — they create cultures where doing the right thing is the default, not the exception."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. EMOTIONAL INTELLIGENCE -->
+  <section class="expertise-section" id="emotional-intelligence">
+    <div class="exp-header reveal">
+      <div class="exp-icon">🧠</div>
+      <div class="exp-title-block">
+        <p class="section-label">Competency 03</p>
+        <h2>Emotional Intelligence in Leadership</h2>
+      </div>
+    </div>
+    <div class="exp-divider reveal"></div>
+    <div class="exp-body">
+      <div class="reveal-left">
+        <p class="exp-intro"><strong>Emotional intelligence (EI)</strong> is the foundation of effective healthcare leadership. The ability to understand and manage one's own emotions — and to recognize and influence the emotions of others — is what separates good managers from transformational leaders.</p>
+        <p class="exp-intro">In high-stakes healthcare environments, EI directly impacts team performance, patient safety, staff retention, and organizational culture.</p>
+        <ul class="exp-points">
+          <li><strong>Self-Awareness:</strong> Recognizing personal biases and emotional triggers to make more objective, patient-centered decisions</li>
+          <li><strong>Self-Regulation:</strong> Staying calm under pressure and modeling emotional steadiness during crises and conflict</li>
+          <li><strong>Intrinsic Motivation:</strong> Leading from a genuine commitment to patient outcomes and team wellbeing — not just metrics</li>
+          <li><strong>Empathy:</strong> Listening actively to staff concerns and understanding the emotional state of patients and families</li>
+          <li><strong>Social Awareness:</strong> Reading team dynamics, organizational culture, and diversity dimensions to lead inclusively</li>
+          <li>Building psychologically safe environments where staff can speak up, admit mistakes, and grow</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Self-Awareness</span>
+          <span class="exp-tag">Empathy</span>
+          <span class="exp-tag">Self-Regulation</span>
+          <span class="exp-tag">Social Awareness</span>
+          <span class="exp-tag">Motivation</span>
+          <span class="exp-tag">Psychological Safety</span>
+        </div>
+      </div>
+      <div class="exp-callout reveal-right">
+        <p class="callout-label">Key Insight</p>
+        <p>"Emotional intelligence isn't a soft skill — in healthcare, it is the single most critical leadership competency for building teams that are resilient, engaged, and patient-focused."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. QUALITY IMPROVEMENT -->
+  <section class="expertise-section" id="quality-improvement">
+    <div class="exp-header reveal">
+      <div class="exp-icon">📊</div>
+      <div class="exp-title-block">
+        <p class="section-label">Competency 04</p>
+        <h2>Quality Improvement</h2>
+      </div>
+    </div>
+    <div class="exp-divider reveal"></div>
+    <div class="exp-body">
+      <div class="reveal-left">
+        <p class="exp-intro"><strong>Quality improvement (QI)</strong> in healthcare is the disciplined, data-driven pursuit of better outcomes for patients, staff, and systems. It requires the ability to analyze complex data, identify root causes of problems, and implement sustainable solutions.</p>
+        <p class="exp-intro">My QI philosophy centers on engaging frontline staff as the primary architects of improvement — because those closest to the work have the deepest insight into what needs to change.</p>
+        <ul class="exp-points">
+          <li>Applying evidence-based QI frameworks including PDCA, DMAIC, and IHI Model for Improvement</li>
+          <li>Conducting root cause analyses (RCA) and failure mode and effects analyses (FMEA) for adverse events</li>
+          <li>Designing and tracking quality metrics aligned with patient safety, satisfaction, and clinical outcomes</li>
+          <li>Leading interdisciplinary QI teams and facilitating structured improvement cycles</li>
+          <li>Presenting quality data to stakeholders in clear, actionable formats to drive accountability</li>
+          <li>Integrating quality improvement into daily huddles, staff meetings, and organizational strategy</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">PDCA</span>
+          <span class="exp-tag">DMAIC</span>
+          <span class="exp-tag">Root Cause Analysis</span>
+          <span class="exp-tag">Patient Safety</span>
+          <span class="exp-tag">Data Analytics</span>
+          <span class="exp-tag">IHI Framework</span>
+        </div>
+      </div>
+      <div class="exp-callout reveal-right">
+        <p class="callout-label">Key Insight</p>
+        <p>"Quality improvement is not a department — it is a mindset that must be embedded in the daily habits, conversations, and decisions of every person in the organization."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. STAFF DEVELOPMENT -->
+  <section class="expertise-section" id="staff-development">
+    <div class="exp-header reveal">
+      <div class="exp-icon">🤝</div>
+      <div class="exp-title-block">
+        <p class="section-label">Competency 05</p>
+        <h2>Staff Development</h2>
+      </div>
+    </div>
+    <div class="exp-divider reveal"></div>
+    <div class="exp-body">
+      <div class="reveal-left">
+        <p class="exp-intro">An organization's greatest asset is its people. <strong>Investing in staff development</strong> isn't just a retention strategy — it is the foundation of a high-performing, mission-driven culture. When staff grow, organizations grow.</p>
+        <p class="exp-intro">Effective staff development requires understanding what drives each individual — their goals, strengths, and sources of meaning — and creating pathways that align personal growth with organizational mission.</p>
+        <ul class="exp-points">
+          <li>Designing onboarding and orientation programs that build both competency and culture from day one</li>
+          <li>Developing individualized growth plans that align staff goals with organizational needs</li>
+          <li>Mentoring emerging leaders and clinical staff through coaching, feedback, and stretch assignments</li>
+          <li>Implementing evidence-based strategies to reduce burnout, compassion fatigue, and turnover</li>
+          <li>Facilitating professional development programs, continuing education, and leadership training</li>
+          <li>Building succession pipelines to ensure organizational resilience and continuity of leadership</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Mentorship</span>
+          <span class="exp-tag">Coaching</span>
+          <span class="exp-tag">Burnout Prevention</span>
+          <span class="exp-tag">Succession Planning</span>
+          <span class="exp-tag">Onboarding</span>
+          <span class="exp-tag">Leadership Development</span>
+        </div>
+      </div>
+      <div class="exp-callout reveal-right">
+        <p class="callout-label">Key Insight</p>
+        <p>"Leaders who invest in their people don't just build better teams — they build organizations that attract, retain, and inspire the best talent in healthcare."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. APPLIED RESEARCH -->
+  <section class="expertise-section" id="applied-research">
+    <div class="exp-header reveal">
+      <div class="exp-icon">🔬</div>
+      <div class="exp-title-block">
+        <p class="section-label">Competency 06</p>
+        <h2>Applied Research</h2>
+      </div>
+    </div>
+    <div class="exp-divider reveal"></div>
+    <div class="exp-body">
+      <div class="reveal-left">
+        <p class="exp-intro"><strong>Applied research</strong> bridges the gap between academic knowledge and real-world healthcare practice. As a doctoral candidate, I am trained to critically evaluate evidence, design rigorous studies, and translate findings into strategies that improve organizational performance.</p>
+        <p class="exp-intro">In today's rapidly evolving healthcare landscape, evidence-based decision-making is not optional — it is the standard of excellence for administrators who want to lead with credibility and impact.</p>
+        <ul class="exp-points">
+          <li>Designing and executing mixed-methods research studies relevant to healthcare administration and leadership</li>
+          <li>Critically appraising peer-reviewed literature to inform strategic decisions and policy recommendations</li>
+          <li>Applying findings from organizational behavior, health systems, and leadership research to practical settings</li>
+          <li>Presenting research findings to administrative, clinical, and community stakeholders</li>
+          <li>Identifying gaps in organizational practice and designing evidence-based interventions to address them</li>
+          <li>Pursuing original doctoral dissertation research in healthcare leadership and administration</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Mixed Methods</span>
+          <span class="exp-tag">Evidence-Based Practice</span>
+          <span class="exp-tag">Literature Review</span>
+          <span class="exp-tag">Dissertation Research</span>
+          <span class="exp-tag">Data Analysis</span>
+        </div>
+      </div>
+      <div class="exp-callout reveal-right">
+        <p class="callout-label">Key Insight</p>
+        <p>"The most impactful healthcare administrators are those who can read the evidence, question assumptions, and make decisions that are grounded in both data and lived experience."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK CTA -->
+  <div class="back-cta reveal">
+    <p>Ready to connect or collaborate?</p>
+    <a href="index.html#contact">Get In Touch</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Mark H. Thomson · Healthcare Administrator · Doctoral Candidate
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Highlight active quick-nav link on scroll
+    const sections = document.querySelectorAll('.expertise-section');
+    const navLinks = document.querySelectorAll('.quick-nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 160) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--teal)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
